@@ -53,44 +53,6 @@ w
 
 
 
-
-#//////////////////// OIL PRICES //////////////////////////////////
-base=read.table("oil.price.dat",header = TRUE)
-serieOP=ts(base,start = c(1986,1),end=c(2006,1),frequency = 12)
-plot(serieOP,ylab = "Precio por barril",xlab = "Año",main="Precio
-     mensual de la gasolina: Enero 1986-Enero 2006")
-*****************Obteniendo el logaritmo de la variable***************
-log_seriOP=log(serieOP)
-plot(log_seriOP,ylab = "log(Precio por barril)",xlab = "Año",main="Precio
-     mensual de la gasolina: Enero 1986-Enero 2006")
-****************Primera diferencia de la variable********************
-dif_log_serieOP=diff(log_seriOP)
-plot(dif_log_serieOP,ylab = "log(Precio por barril)",xlab = "Año",main="Precio
-     mensual de la gasolina: Enero 1986-Enero 2006")
-****************Segunda diferencia de la variable *******************
-dif2serieOP=diff(dif_log_serieOP)
-plot(dif2serieOP)
-#///////////////////////////////////////////////////////////////////
-
-
-
-
-
-#///////////////// ELECTRICITY //////////////////////////////////////
-base2=read.table("electricity.dat",header = TRUE)   
-serieELCT=ts(base2,start = c(1973,1), end = c(2005,12),frequency = 12)
-plot(serieELCT,ylab = "Kilowats hora", xlab = "Años",
-     main ="Generación de electricidad(En millones de kilowats hora)")
-log_serieELCT=log(serieELCT)
-plot(log_serieELCT)
-dif_log_seriesELCT=diff(log_serieELCT)
-plot(dif_log_seriesELCT)
-#///////////////////////////////////////////////////////////////////
-
-
-
-
-
 #/////////////////SIMULACIONES///////////////////////////////////////
 library("TSA", lib.loc="~/R/win-library/3.2") 
 #***************Simulación MA(1)****************
@@ -134,3 +96,47 @@ eacf(arma11.s)
 #///////////////////////////////////////////////////////////////////
 
 
+#/////////////////////IMA(2,2)/////////////////////////////////////
+data(ima22.s)
+plot(ima22.s,ylab='IMA(2,2) Simulation',type='o')
+#primera diferencia de la serie IMA(2,2)
+plot(diff(ima22.s),ylab='First Difference',type='o')
+#segunda diferencia de la serie IMA(2,2)
+plot(diff(ima22.s,difference=2),ylab='DifferencedTwice',type='o')
+#//////////////////////////////////////////////////////////////////
+
+
+
+
+#//////////////////// OIL PRICES //////////////////////////////////
+base=read.table("oil.price.dat",header = TRUE)
+serieOP=ts(base,start = c(1986,1),end=c(2006,1),frequency = 12)
+plot(serieOP,ylab = "Precio por barril",xlab = "Año",main="Precio
+     mensual de la gasolina: Enero 1986-Enero 2006")
+*****************Obteniendo el logaritmo de la variable***************
+log_seriOP=log(serieOP)
+plot(log_seriOP,ylab = "log(Precio por barril)",xlab = "Año",main="Precio
+     mensual de la gasolina: Enero 1986-Enero 2006")
+****************Primera diferencia de la variable********************
+dif_log_serieOP=diff(log_seriOP)
+plot(dif_log_serieOP,ylab = "log(Precio por barril)",xlab = "Año",main="Precio
+     mensual de la gasolina: Enero 1986-Enero 2006")
+****************Segunda diferencia de la variable *******************
+dif2serieOP=diff(dif_log_serieOP)
+plot(dif2serieOP)
+#///////////////////////////////////////////////////////////////////
+
+
+
+
+
+#///////////////// ELECTRICITY //////////////////////////////////////
+base2=read.table("electricity.dat",header = TRUE)   
+serieELCT=ts(base2,start = c(1973,1), end = c(2005,12),frequency = 12)
+plot(serieELCT,ylab = "Kilowats hora", xlab = "Años",
+     main ="Generación de electricidad(En millones de kilowats hora)")
+log_serieELCT=log(serieELCT)
+plot(log_serieELCT)
+dif_log_seriesELCT=diff(log_serieELCT)
+plot(dif_log_seriesELCT)
+#///////////////////////////////////////////////////////////////////
