@@ -140,3 +140,23 @@ plot(log_serieELCT)
 dif_log_seriesELCT=diff(log_serieELCT)
 plot(dif_log_seriesELCT)
 #///////////////////////////////////////////////////////////////////
+
+
+
+#/////////////ESPECIFICACIONES DEL MODELO PARA LA SERIE OIL/////////
+data(oil.price)
+acf(as.vector(oil.price),xaxp=c(0,24,12))
+#si quieren agregar su nombre agregar el parámetro "main"
+pacf(as.vector(oil.price),xaxp=c(0,24,12))
+#Las diferencia de los logaritmos de la serie
+acf(diff(as.vector(log(oil.price))),xaxp=c(0,24,12))
+pacf(diff(as.vector(log(oil.price))),xaxp=c(0,24,12))
+#//////////////////////////////////////////////////////////////////
+
+#///////////////////////Sobre Diferenciación//////////////////////
+data(rwalk)
+#Dos diferencias
+acf(diff(rwalk,difference=2),ci.type='ma', xaxp=c(0,18,9))
+#Una diferencia
+acf(diff(rwalk),ci.type='ma',xaxp=c(0,18,9))
+#//////////////////////////////////////////////////////////////
