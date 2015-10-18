@@ -160,3 +160,61 @@ acf(diff(rwalk,difference=2),ci.type='ma', xaxp=c(0,18,9))
 #Una diferencia
 acf(diff(rwalk),ci.type='ma',xaxp=c(0,18,9))
 #//////////////////////////////////////////////////////////////
+
+
+
+
+#///////////////The Dickey-Fuller Unit-Root Test/////////////////
+
+library(uroot)
+ADF.test(rwalk,selectlags=list(mode=c(1,2,3,4,5,6,7,8),Pmax=8),
+         itsd=c(1,0,0))
+ADF.test(rwalk,selectlags=list(mode=c(1,2,3,4,5,6,7,8),Pmax=8),
+         itsd=c(1,1,0))
+ADF.test(rwalk,selectlags=list(Pmax=0),itsd=c(1,1,0))
+#//////////////////////////////////////////////////////////////
+
+
+
+#/////////////////////BIC para simulacion de Yt = 0.8Y_(t−12) + e_t + 0.7e_(t−12)
+
+set.seed(92397)
+test=arima.sim(model=list(ar=c(rep(0,11),.8),
+                            ma=c(rep(0,11),0.7)),n=120)
+res=armasubsets(y=test,nar=14,nma=14,y.name='test',
+                  ar.method='ols')
+plot(res)
+#///////////////////////////////////////////////////////////////////////////////////
+
+
+
+#/////////////////////////Especificación del modelo para larain/////
+data(larain)
+plot(larain,ylab='Inches',xlab='Year',type='o')
+qqnorm(larain)
+qqline(larain)
+qqnorm(log(larain))
+qqline(log(larain))
+acf(log(larain),xaxp=c(0,20,10))
+pacf(log(larain),xaxp=c(0,20,10))
+#///////////////////////////////////////////////////////////////////
+
+
+#/////////Especificación del modelo para propiedades del color///////
+
+data(color)
+plot(color,ylab='Color Property',xlab='Batch',type='o')
+plot(y=color,x=zlag(color),ylab='Color Property',
+     xlab='Previous Batch Color Property')
+acf(color,ci.type='ma')
+acf(color)
+pacf(color)
+
+
+
+
+
+#//////////////////////////////////////////////////////////////////
+
+
+
