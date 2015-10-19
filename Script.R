@@ -176,8 +176,7 @@ ADF.test(rwalk,selectlags=list(Pmax=0),itsd=c(1,1,0))
 
 
 
-#/////////////////////BIC para simulacion de Yt = 0.8Y_(t−12) + e_t + 0.7e_(t−12)
-
+#////BIC para simulacion de Yt = 0.8Y_(t−12) + e_t + 0.7e_(t−12)////
 set.seed(92397)
 test=arima.sim(model=list(ar=c(rep(0,11),.8),
                             ma=c(rep(0,11),0.7)),n=120)
@@ -200,7 +199,7 @@ pacf(log(larain),xaxp=c(0,20,10))
 #///////////////////////////////////////////////////////////////////
 
 
-#/////////Especificación del modelo para propiedades del color///////
+#////////Especificación del modelo para propiedades del color///////
 
 data(color)
 plot(color,ylab='Color Property',xlab='Batch',type='o')
@@ -210,11 +209,30 @@ acf(color,ci.type='ma')
 acf(color)
 pacf(color)
 
+#///////////////////////////////////////////////////////////////////
 
 
 
 
-#//////////////////////////////////////////////////////////////////
+
+#////////Especificación The Annual Abundance of Canadian hare///////
+data(hare)
+BoxCox.ar(hare)
+acf(hare^.5)
+pacf(hare^.5)
+#///////////////////////////////////////////////////////////////////
 
 
+
+
+
+
+#////////////////Especificando el modelo para OIL PRICES///////////
+eacf(diff(log(oil.price)))
+res=armasubsets(y=diff(log(oil.price)),nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+acf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
+pacf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
+#/////////////////////////////////////////////////////////////////
 
