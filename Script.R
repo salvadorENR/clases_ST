@@ -226,7 +226,6 @@ pacf(hare^.5)
 
 
 
-
 #////////////////Especificando el modelo para OIL PRICES///////////
 eacf(diff(log(oil.price)))
 res=armasubsets(y=diff(log(oil.price)),nar=7,nma=7,
