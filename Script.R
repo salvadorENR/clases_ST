@@ -235,3 +235,105 @@ acf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
 pacf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
 #/////////////////////////////////////////////////////////////////
 
+
+
+#///////////////////ESTIMACIÓN DE PARAMETROS///////////////////////
+#**********************Método de los momentos*********************
+data(ma1.2.s); data(ma1.1.s); data(ma1.3.s); data(ma1.4.s)
+estimate.ma1.mom(ma1.2.s); estimate.ma1.mom(ma1.1.s)
+estimate.ma1.mom(ma1.3.s); estimate.ma1.mom(ma1.4.s)
+arima(ma1.4.s,order=c(0,0,1),method='CSS',include.mean=F)
+data(ar1.s); data(ar1.2.s)
+ar(ar1.s,order.max=1,AIC=F,method='yw')
+ar(ar1.2.s,order.max=1,AIC=F,method='yw')
+data(ar2.s)
+ar(ar2.s,order.max=2,AIC=F,method='yw')
+#*****************************************************************
+
+#***********Ilustración de la estimación de parametros************
+data(ar1.s); data(ar1.2.s)
+ar(ar1.s,order.max=1,AIC=F,method='yw')
+ar(ar1.s,order.max=1,AIC=F,method='ols')
+ar(ar1.s,order.max=1,AIC=F,method='mle')
+ar(ar1.2.s,order.max=1,AIC=F,method='yw')
+ar(ar1.2.s,order.max=1,AIC=F,method='ols')
+ar(ar1.2.s,order.max=1,AIC=F,method='mle')
+
+
+data(ar2.s)
+ar(ar2.s,order.max=2,AIC=F,method='yw')
+ar(ar2.s,order.max=2,AIC=F,method='ols')
+ar(ar2.s,order.max=2,AIC=F,method='mle')
+
+
+data(arma11.s)
+arima(arma11.s, order=c(1,0,1),method='CSS')
+arima(arma11.s, order=c(1,0,1),method='ML')
+
+
+data(color)
+ar(color,order.max=1,AIC=F,method='yw')
+ar(color,order.max=1,AIC=F,method='ols')
+ar(color,order.max=1,AIC=F,method='mle')
+
+
+data(hare)
+arima(sqrt(hare),order=c(3,0,0))
+
+
+data(oil.price)
+arima(log(oil.price),order=c(0,1,1),method='CSS')
+arima(log(oil.price),order=c(0,1,1),method='ML')
+
+#*****************************************************************
+#//////////////////////////////////////////////////////////////////
+
+
+#////////////////////DIAGNOSTICO DEL MODELO///////////////////////
+#*********************Análisis de los residuos*******************
+win.graph(width=4.875,height=3,pointsize=8)
+data(color)
+m1.color=arima(color,order=c(1,0,0)); m1.color
+plot(rstandard(m1.color),ylab ='Standardized Residuals',
+       type='o'); abline(h=0)
+
+
+
+> data(hare)
+> m1.hare=arima(sqrt(hare),order=c(3,0,0)); m1.hare
+> m2.hare=arima(sqrt(hare),order=c(3,0,0),fixed=c(NA,0,NA,NA))
+> m2.hare
+> # Note that the intercept term given in R is actually the mean
+    in the centered form of the ARMA model; that is, if
+y(t)=sqrt(hare)-intercept, then the model is
+y(t)=0.919*y(t-1)-0.5313*y(t-3)+e(t)
+> # So the 'true' intercept equals 5.6889*(1-0.919+0.5313)=3.483
+    > plot(rstandard(m2.hare),ylab='Standardized Residuals',type='o')
+> abline(h=0)
+
+
+data(oil.price)
+> m1.oil=arima(log(oil.price),order=c(0,1,1))
+> plot(rstandard(m1.oil),ylab='Standardized residuals',type='l')
+> abline(h=0)
+#****************************************************************
+
+
+#***********************NORMALIDAD DE LOS RESIDUOS****************
+win.graph(width=2.5,height=2.5,pointsize=8)
+qqnorm(residuals(m1.color)); qqline(residuals(m1.color))
+
+qqnorm(residuals(m1.hare)); qqline(residuals(m1.hare))
+
+qqnorm(residuals(m1.oil)); qqline(residuals(m1.oil))
+#*****************************************************************
+
+
+
+
+#/////////////////////////////////////////////////////////////////
+
+
+
+
+
