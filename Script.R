@@ -167,6 +167,8 @@ acf(diff(rwalk),ci.type='ma',xaxp=c(0,18,9))
 #///////////////The Dickey-Fuller Unit-Root Test/////////////////
 
 library(uroot)
+data(rwalk)
+adf.test(rwalk)
 ADF.test(rwalk,selectlags=list(mode=c(1,2,3,4,5,6,7,8),Pmax=8),
          itsd=c(1,0,0))
 ADF.test(rwalk,selectlags=list(mode=c(1,2,3,4,5,6,7,8),Pmax=8),
@@ -227,6 +229,10 @@ pacf(hare^.5)
 
 
 #////////////////Especificando el modelo para OIL PRICES///////////
+data(oil.price)
+adf.test(oil.price)
+adf.test(log(oil.price))
+adf.test(diff(log(oil.price)))
 eacf(diff(log(oil.price)))
 res=armasubsets(y=diff(log(oil.price)),nar=7,nma=7,
                 y.name='test', ar.method='ols')
@@ -299,23 +305,23 @@ plot(rstandard(m1.color),ylab ='Standardized Residuals',
 
 
 
-> data(hare)
-> m1.hare=arima(sqrt(hare),order=c(3,0,0)); m1.hare
-> m2.hare=arima(sqrt(hare),order=c(3,0,0),fixed=c(NA,0,NA,NA))
-> m2.hare
-> # Note that the intercept term given in R is actually the mean
+data(hare)
+m1.hare=arima(sqrt(hare),order=c(3,0,0)); m1.hare
+m2.hare=arima(sqrt(hare),order=c(3,0,0),fixed=c(NA,0,NA,NA))
+m2.hare
+# Note that the intercept term given in R is actually the mean
     in the centered form of the ARMA model; that is, if
 y(t)=sqrt(hare)-intercept, then the model is
 y(t)=0.919*y(t-1)-0.5313*y(t-3)+e(t)
-> # So the 'true' intercept equals 5.6889*(1-0.919+0.5313)=3.483
+# So the 'true' intercept equals 5.6889*(1-0.919+0.5313)=3.483
     > plot(rstandard(m2.hare),ylab='Standardized Residuals',type='o')
-> abline(h=0)
+abline(h=0)
 
 
 data(oil.price)
-> m1.oil=arima(log(oil.price),order=c(0,1,1))
-> plot(rstandard(m1.oil),ylab='Standardized residuals',type='l')
-> abline(h=0)
+ m1.oil=arima(log(oil.price),order=c(0,1,1))
+plot(rstandard(m1.oil),ylab='Standardized residuals',type='l')
+abline(h=0)
 #****************************************************************
 
 
@@ -328,12 +334,56 @@ qqnorm(residuals(m1.hare)); qqline(residuals(m1.hare))
 qqnorm(residuals(m1.oil)); qqline(residuals(m1.oil))
 #*****************************************************************
 
-
-
-
 #/////////////////////////////////////////////////////////////////
 
+#/////////Especificación para la serie "Número de nuevos peces" ///////
+library("astsa")
+plot(rec, ylab="", xlab="", main="Recruitment")
+plot(log(rec))
+plot(diff(rec))
+plot(diff(log(rec)))
+adf.test(rec)
+adf.test(diff(log(rec)))
+acf(rec,ci.type="ma")
+acf(rec,xaxp=c(0,22,11))
+pacf(rec,xaxp=c(0,22,11))
+eacf(rec)
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+
+#///////////////////////////////////////////////////////////////////
 
 
+#//Especificación para la serie Producto nacional bruto de EE.UU.//
+data(gnp)
+plot(gnp)
+acf(gnp,ci.type="ma")
+adf.test(gnp)
+BoxCox.ar(gnp)
+plot(diff(gnp))
+plot(diff(log(gnp)))
+adf.test(diff(gnp))
+acf(diff(gnp),ci.type="ma")
+pacf(diff(gnp))
+eacf(diff(gnp))
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+#////////////////////////////////////////////////////////////////
+
+#///////////////Serie de retornos//////////////////////////////////
+retorno=ts(m.ibm3dx2608$ewrtn,start = c(1926,1),end = c(2008,12),frequency = 12)
+plot(retorno)
+BoxCox.ar(retorno)
+adf.test(retorno)
+acf(retorno,ci.type="ma")
+pacf(retorno)
+eacf(retorno)
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+
+#//////////////////////////////////////////////////////////////////
 
 
