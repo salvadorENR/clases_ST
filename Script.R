@@ -226,8 +226,6 @@ pacf(hare^.5)
 
 
 
-
-
 #////////////////Especificando el modelo para OIL PRICES///////////
 data(oil.price)
 adf.test(oil.price)
@@ -240,6 +238,61 @@ plot(res)
 acf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
 pacf(as.vector(diff(log(oil.price))),xaxp=c(0,22,11))
 #/////////////////////////////////////////////////////////////////
+
+
+#/////////////////////////////////////////////////////////////////
+
+#/////////Especificación para la serie "Número de nuevos peces" ///////
+library("astsa")
+plot(rec, ylab="", xlab="", main="Recruitment")
+plot(log(rec))
+plot(diff(rec))
+plot(diff(log(rec)))
+adf.test(rec)
+adf.test(diff(log(rec)))
+acf(rec,ci.type="ma")
+acf(rec,xaxp=c(0,22,11))
+pacf(rec,xaxp=c(0,22,11))
+eacf(rec)
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+
+#///////////////////////////////////////////////////////////////////
+
+
+#//Especificación para la serie Producto nacional bruto de EE.UU.//
+data(gnp)
+plot(gnp)
+acf(gnp,ci.type="ma")
+adf.test(gnp)
+BoxCox.ar(gnp)
+plot(diff(gnp))
+plot(diff(log(gnp)))
+adf.test(diff(gnp))
+acf(diff(gnp),ci.type="ma")
+pacf(diff(gnp))
+eacf(diff(gnp))
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+#////////////////////////////////////////////////////////////////
+
+#///////////////Serie de retornos//////////////////////////////////
+retorno=ts(m.ibm3dx2608$ewrtn,start = c(1926,1),end = c(2008,12),frequency = 12)
+plot(retorno)
+BoxCox.ar(retorno)
+adf.test(retorno)
+acf(retorno,ci.type="ma")
+pacf(retorno)
+eacf(retorno)
+res=armasubsets(y=rec,nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(res)
+
+#//////////////////////////////////////////////////////////////////
+
+
 
 
 
@@ -334,56 +387,5 @@ qqnorm(residuals(m1.hare)); qqline(residuals(m1.hare))
 qqnorm(residuals(m1.oil)); qqline(residuals(m1.oil))
 #*****************************************************************
 
-#/////////////////////////////////////////////////////////////////
-
-#/////////Especificación para la serie "Número de nuevos peces" ///////
-library("astsa")
-plot(rec, ylab="", xlab="", main="Recruitment")
-plot(log(rec))
-plot(diff(rec))
-plot(diff(log(rec)))
-adf.test(rec)
-adf.test(diff(log(rec)))
-acf(rec,ci.type="ma")
-acf(rec,xaxp=c(0,22,11))
-pacf(rec,xaxp=c(0,22,11))
-eacf(rec)
-res=armasubsets(y=rec,nar=7,nma=7,
-                y.name='test', ar.method='ols')
-plot(res)
-
-#///////////////////////////////////////////////////////////////////
-
-
-#//Especificación para la serie Producto nacional bruto de EE.UU.//
-data(gnp)
-plot(gnp)
-acf(gnp,ci.type="ma")
-adf.test(gnp)
-BoxCox.ar(gnp)
-plot(diff(gnp))
-plot(diff(log(gnp)))
-adf.test(diff(gnp))
-acf(diff(gnp),ci.type="ma")
-pacf(diff(gnp))
-eacf(diff(gnp))
-res=armasubsets(y=rec,nar=7,nma=7,
-                y.name='test', ar.method='ols')
-plot(res)
-#////////////////////////////////////////////////////////////////
-
-#///////////////Serie de retornos//////////////////////////////////
-retorno=ts(m.ibm3dx2608$ewrtn,start = c(1926,1),end = c(2008,12),frequency = 12)
-plot(retorno)
-BoxCox.ar(retorno)
-adf.test(retorno)
-acf(retorno,ci.type="ma")
-pacf(retorno)
-eacf(retorno)
-res=armasubsets(y=rec,nar=7,nma=7,
-                y.name='test', ar.method='ols')
-plot(res)
-
-#//////////////////////////////////////////////////////////////////
 
 
