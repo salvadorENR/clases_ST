@@ -162,8 +162,6 @@ acf(diff(rwalk),ci.type='ma',xaxp=c(0,18,9))
 #//////////////////////////////////////////////////////////////
 
 
-
-
 #///////////////The Dickey-Fuller Unit-Root Test/////////////////
 
 library(uroot)
@@ -226,7 +224,7 @@ pacf(hare^.5)
 
 
 
-#////////////////Especificando el modelo para OIL PRICES///////////
+#////////////////Especificando el modelo para precios de gasolina///////////
 data(oil.price)
 adf.test(oil.price)
 adf.test(log(oil.price))
@@ -278,7 +276,7 @@ res=armasubsets(y=rec,nar=7,nma=7,
 plot(res)
 #////////////////////////////////////////////////////////////////
 
-#///////////////Serie de retornos//////////////////////////////////
+#///////////////Serie de devoluciones//////////////////////////////////
 retorno=ts(m.ibm3dx2608$ewrtn,start = c(1926,1),end = c(2008,12),frequency = 12)
 plot(retorno)
 BoxCox.ar(retorno)
