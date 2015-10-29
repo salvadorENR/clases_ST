@@ -298,15 +298,14 @@ plot(res)
 #**********************Método de los momentos*********************
 estimate.ma1.mom=function(x){r=acf(x,plot=F)$acf[1]; if (abs(r)<0.5) 
     return((-1+sqrt(1-4*r^2))/(2*r)) else return(NA)}
+data(ma1.2.s); data(ma1.1.s)
 set.seed(1234)
 ma1.3.s=arima.sim(list(ma=c(-.9)),n=60)
-estimate.ma1.mom(ma1.3.s)
-ma1.4.s=arima.sim(list(ma=c(-0.5)),n=60) 
-estimate.ma1.mom(ma1.4.s)
-data(ma1.2.s); data(ma1.1.s) 
+ma1.4.s=arima.sim(list(ma=c(0.5)),n=60)  
 #data(ma1.3.s); data(ma1.4.s)
 estimate.ma1.mom(ma1.2.s); estimate.ma1.mom(ma1.1.s)
 estimate.ma1.mom(ma1.3.s); estimate.ma1.mom(ma1.4.s)
+#method:Fitting method: maximum likelihood or minimize conditional sum-of-squares. Can be abbreviated.
 arima(ma1.4.s,order=c(0,0,1),method='CSS',include.mean=F)
 data(ar1.s); data(ar1.2.s)
 ar(ar1.s,order.max=1,AIC=F,method='yw')
