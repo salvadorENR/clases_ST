@@ -416,3 +416,12 @@ arima(color,order=c(2,0,0))
 arima(color,order=c(1,0,1))
 arima(color,order=c(2,0,1))
 #*****************************************************************
+
+
+##Funciones extras
+corr<-function(phi){
+    switch(phi,phi<1{val=1},phi==0,phi>1)
+    return(val)
+      
+}
+
