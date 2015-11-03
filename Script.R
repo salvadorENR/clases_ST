@@ -392,5 +392,27 @@ qqnorm(residuals(m1.hare)); qqline(residuals(m1.hare))
 qqnorm(residuals(m1.oil)); qqline(residuals(m1.oil))
 #*****************************************************************
 
+##******************AUTOCORRELACIÓN_DE_LOS_RESIDUOS****************
 
+win.graph(width=4.875,height=3,pointsize=8)
+acf(residuals(m1.color))
 
+acf(residuals(arima(sqrt(hare),order=c(2,0,0))))
+
+#*****************************************************************
+
+#************LA_PRUEBA_DE_The_Ljung-Box_Test**********************
+acf(residuals(m1.color),plot=F)$acf
+signif(acf(residuals(m1.color),plot=F)$acf[1:6],2)
+# display the first 6 acf values to 2 significant digits
+
+win.graph(width=4.875,height=4.5)
+tsdiag(m1.color,gof=15,omit.initial=F)
+#*****************************************************************
+
+#*********************REDUNDANCIA_DE_PARAMETROS*******************
+arima(color,order=c(1,0,0))
+arima(color,order=c(2,0,0))
+arima(color,order=c(1,0,1))
+arima(color,order=c(2,0,1))
+#*****************************************************************
