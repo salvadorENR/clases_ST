@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc} % utilice "latin1" si 
+\usepackage{multienum}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\begin{document}
+
+Este es el analisis para una serie real
+Visualizacion de la serie
+<<>>=
+library("TSA")
+library("leaps")
+library("locfit")
+library("tseries")
+basemz=read.table("maiz.txt",header=TRUE)
+basemz
+mz=ts(basemz$maiz,start=c(2010,1),end=c(2015,10),frequency = 12,names="Precio del maíz")
+plot(mz,type="o", xlab="Año", ylab = "Precio del maíz",main="Gráfico del precio del maíz de Enero/2010-Octubre/2015")
+@
+
+Analisis de estacionariedad
+
+<<>>=
+library("TSA")
+library("leaps")
+library("locfit")
+library("tseries")
+adf.test(mz)
+BoxCox.ar(mz)
+plot(mz,type="o")
+plot(diff(mz),type="o")
+plot(diff(mz^(-1.8)),type="o")
+plot(diff(mz^(-2)),type="o")
+adf.test(diff(mz))
+adf.test(diff(mz^(-1.8))
+adf.test(diff(mz^(-2)))
+@
+De los resultados anterires se concluye que solomente se hara una diferencia a las serie
+
+<<>>=
+library("TSA")
+library("leaps")
+library("locfit")
+library("tseries")
+acf(diff(mz))
+pacf(diff(mz))
+eacf(diff(mz))
+cua=armasubsets(y=diff(mz),nar=7,nma=7,
+                y.name='test', ar.method='ols')
+plot(cua)
+@
+
+Modelos que podrian a probar:
+ARI(3,1)
+
+ARIMA(1,1,3)
+
+ARIMA(3,1,3)
+
+estimacion de parametros
+Se toma el ARI(3) para probarlo
+<<>>=
+library("TSA")
+library("leaps")
+library("locfit")
+library("tseries")
+arima(diff(mz), order=c(3,0,0),method='ML')
+@
+
+Validacion del modelo
+
+<<>>=
+m1.maiz=arima(diff(mz),order=c(3,0,0), method='ML'); m1.maiz
+plot(rstandard(m1.maiz),ylab ='Standardized Residuals',
+       type='o'); abline(h=0)
+qqnorm(residuals(m1.maiz)); qqline(residuals(m1.maiz))
+acf(residuals(m1.maiz))
+
+tsdiag(m1.maiz,gof=15,omit.initial=F)
+@
+
+Pues sin ser tan esctrictos el modelo se validara
+
+
+
+
+
+\end{document}

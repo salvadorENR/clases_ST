@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc} % utilice "latin1" si 
+\usepackage{multienum}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\begin{document}
+
+Este es el analisis para una serie real
+comunicaci\'on
+
+\end{document}
