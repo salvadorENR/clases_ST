@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  9 NOV 2015 10:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.9.27)  10 NOV 2015 06:29
 entering extended mode
 **modeloMaiz.tex
 
@@ -632,29 +632,56 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 166--167
 
 [3]
 
-Package xcolor Warning: Incompatible color definition on input line 176.
+Package xcolor Warning: Incompatible color definition on input line 173.
 
-<figure/unnamed-chunk-2-1.pdf, id=20, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 
-<use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf used on input line 185.
-(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+Package xcolor Warning: Incompatible color definition on input line 194.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 185--186
-[][] 
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 194--195
+[]\OT1/cmtt/m/n/10 ## Warning in arima0(x, order = c(i, 0L, 0L), include.mean =
+ demean):
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 196.
+
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 196--197
+[]\OT1/cmtt/m/n/10 ## Warning in arima0(x, order = c(i, 0L, 0L), include.mean =
+ demean):
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 198.
+
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 198--198
+[]\OT1/cmtt/m/n/10 ## Warning in arima0(x, order = c(i, 0L, 0L), include.mean =
+ demean):
  []
 
 [4 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Maiz
 /figure/unnamed-chunk-1-1.pdf>]
+<figure/unnamed-chunk-2-1.pdf, id=29, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf used on input line 199.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 199--200
+[][] 
+ []
+
 <figure/unnamed-chunk-2-2.pdf, id=30, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-2-2.pdf Graphic file (type pdf)
 
 <use figure/unnamed-chunk-2-2.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-2.pdf used on input line 190.
+Package pdftex.def Info: figure/unnamed-chunk-2-2.pdf used on input line 204.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 190--191
+Overfull \hbox (15.0pt too wide) in paragraph at lines 204--205
 [][] 
  []
 
@@ -664,93 +691,160 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 190--191
 File: figure/unnamed-chunk-2-3.pdf Graphic file (type pdf)
 
 <use figure/unnamed-chunk-2-3.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-3.pdf used on input line 212.
+Package pdftex.def Info: figure/unnamed-chunk-2-3.pdf used on input line 209.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 212--213
+Overfull \hbox (15.0pt too wide) in paragraph at lines 209--210
 [][] 
  []
 
 [6 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Maiz
 /figure/unnamed-chunk-2-2.pdf>]
+<figure/unnamed-chunk-2-4.pdf, id=49, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-2-4.pdf Graphic file (type pdf)
 
-Package xcolor Warning: Incompatible color definition on input line 226.
+<use figure/unnamed-chunk-2-4.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-4.pdf used on input line 214.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 245--245
-[]\OT1/cmtt/m/n/10 ## sigma^2 estimated as 0.000312:  log likelihood = 180.4,  
-aic = -352.81[] 
+Overfull \hbox (15.0pt too wide) in paragraph at lines 214--215
+[][] 
  []
 
 [7 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Maiz
 /figure/unnamed-chunk-2-3.pdf>]
+<figure/unnamed-chunk-2-5.pdf, id=59, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-2-5.pdf Graphic file (type pdf)
 
-Package xcolor Warning: Incompatible color definition on input line 252.
-
-
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 267--267
-[]\OT1/cmtt/m/n/10 ## sigma^2 estimated as 0.000312:  log likelihood = 180.4,  
-aic = -352.81[] 
- []
-
-<figure/unnamed-chunk-4-1.pdf, id=59, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-
-<use figure/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf used on input line 273.
+<use figure/unnamed-chunk-2-5.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2-5.pdf used on input line 219.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 273--274
+Overfull \hbox (15.0pt too wide) in paragraph at lines 219--220
 [][] 
  []
 
-[8] <figure/unnamed-chunk-4-2.pdf, id=63, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-4-2.pdf Graphic file (type pdf)
+[8 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Maiz
+/figure/unnamed-chunk-2-4.pdf>] [9 <C:/Users/salvador/Documents/Mis_Proyectos_d
+e_R/MateriaR-2015/clases_ST/Maiz/figure/unnamed-chunk-2-5.pdf>]
 
-<use figure/unnamed-chunk-4-2.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-2.pdf used on input line 278.
+Package xcolor Warning: Incompatible color definition on input line 258.
+
+<figure/unnamed-chunk-3-1.pdf, id=76, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf used on input line 267.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 278--279
+Overfull \hbox (15.0pt too wide) in paragraph at lines 267--268
 [][] 
  []
 
-[9 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Maiz
-/figure/unnamed-chunk-4-1.pdf>]
-<figure/unnamed-chunk-4-3.pdf, id=72, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-4-3.pdf Graphic file (type pdf)
+[10] <figure/unnamed-chunk-3-2.pdf, id=80, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-3-2.pdf Graphic file (type pdf)
 
-<use figure/unnamed-chunk-4-3.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-3.pdf used on input line 283.
+<use figure/unnamed-chunk-3-2.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3-2.pdf used on input line 272.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 283--284
-[][] 
- []
-
-[10 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
-z/figure/unnamed-chunk-4-2.pdf>]
-<figure/unnamed-chunk-4-4.pdf, id=82, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-4-4.pdf Graphic file (type pdf)
-
-<use figure/unnamed-chunk-4-4.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-4.pdf used on input line 288.
-(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 288--289
+Overfull \hbox (15.0pt too wide) in paragraph at lines 272--273
 [][] 
  []
 
 [11 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
-z/figure/unnamed-chunk-4-3.pdf>] [12 <C:/Users/salvador/Documents/Mis_Proyectos
-_de_R/MateriaR-2015/clases_ST/Maiz/figure/unnamed-chunk-4-4.pdf>]
+z/figure/unnamed-chunk-3-1.pdf>]
+<figure/unnamed-chunk-3-3.pdf, id=90, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-3-3.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-3-3.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3-3.pdf used on input line 294.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 294--295
+[][] 
+ []
+
+[12 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
+z/figure/unnamed-chunk-3-2.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 308.
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 327--327
+[]\OT1/cmtt/m/n/10 ## sigma^2 estimated as 0.000312:  log likelihood = 180.4,  
+aic = -352.81[] 
+ []
+
+[13 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
+z/figure/unnamed-chunk-3-3.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 334.
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 349--349
+[]\OT1/cmtt/m/n/10 ## sigma^2 estimated as 0.000312:  log likelihood = 180.4,  
+aic = -352.81[] 
+ []
+
+<figure/unnamed-chunk-5-1.pdf, id=109, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf used on input line 355.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 355--356
+[][] 
+ []
+
+[14] <figure/unnamed-chunk-5-2.pdf, id=113, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-5-2.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-5-2.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-2.pdf used on input line 360.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 360--361
+[][] 
+ []
+
+[15 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
+z/figure/unnamed-chunk-5-1.pdf>]
+<figure/unnamed-chunk-5-3.pdf, id=122, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-5-3.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-5-3.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-3.pdf used on input line 365.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 365--366
+[][] 
+ []
+
+[16 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
+z/figure/unnamed-chunk-5-2.pdf>]
+<figure/unnamed-chunk-5-4.pdf, id=132, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-5-4.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-5-4.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-5-4.pdf used on input line 370.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 370--371
+[][] 
+ []
+
+[17 <C:/Users/salvador/Documents/Mis_Proyectos_de_R/MateriaR-2015/clases_ST/Mai
+z/figure/unnamed-chunk-5-3.pdf>] [18 <C:/Users/salvador/Documents/Mis_Proyectos
+_de_R/MateriaR-2015/clases_ST/Maiz/figure/unnamed-chunk-5-4.pdf>]
 (C:\Users\salvador\Documents\Mis_Proyectos_de_R\MateriaR-2015\clases_ST\Maiz\mo
 deloMaiz.aux) ) 
 Here is how much of TeX's memory you used:
- 9714 strings out of 493921
- 186261 string characters out of 3147273
- 229976 words of memory out of 3000000
- 12825 multiletter control sequences out of 15000+200000
+ 9739 strings out of 493921
+ 187021 string characters out of 3147273
+ 229975 words of memory out of 3000000
+ 12845 multiletter control sequences out of 15000+200000
  3976 words of font info for 16 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,6n,55p,451b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -759,9 +853,9 @@ t10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on modeloMaiz.pdf (12 pages, 134667 bytes).
+Output written on modeloMaiz.pdf (18 pages, 177501 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 167 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 

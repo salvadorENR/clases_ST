@@ -362,7 +362,6 @@ plot(rstandard(m1.color),ylab ='Standardized Residuals',
        type='o'); abline(h=0)
 
 
-
 data(hare)
 m1.hare=arima(sqrt(hare),order=c(3,0,0)); m1.hare
 m2.hare=arima(sqrt(hare),order=c(3,0,0),fixed=c(NA,0,NA,NA))
@@ -417,6 +416,32 @@ arima(color,order=c(1,0,1))
 arima(color,order=c(2,0,1))
 #*****************************************************************
 
+##************************PRONOSTICOS*****************************
+data(color)
+m1.color=arima(color,order=c(1,0,0))
+plot(m1.color,n.ahead=12,type='b',xlab='Time',ylab='Color Property')
+abline(h=coef(m1.color)[names(coef(m1.color))=='intercept'])
+
+data(hare)
+m1.hare=arima(sqrt(hare),order=c(3,0,0))
+plot(m1.hare, n.ahead=25,type='b', xlab='Year',ylab='Sqrt(hare)')
+abline(h=coef(m1.hare)[names(coef(m1.hare))=='intercept'])
+
+
+##****************************************************************
+
+
+
+
+
+##Extras
+er=residuals(m1.color)
+plot(er)
+var(er)
+m1.color
+m1.hare
+er=residuals(m1.hare)
+var(er)
 
 ##Funciones extras
 corr<-function(phi){

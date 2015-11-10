@@ -33,7 +33,7 @@ plot(diff(mz),type="o")
 plot(diff(mz^(-1.8)),type="o")
 plot(diff(mz^(-2)),type="o")
 adf.test(diff(mz))
-adf.test(diff(mz^(-1.8))
+adf.test(diff(mz^(-1.8)))
 adf.test(diff(mz^(-2)))
 @
 De los resultados anterires se concluye que solomente se hara una diferencia a las serie

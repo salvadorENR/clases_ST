@@ -169,7 +169,89 @@ Visualizacion de la serie
 
 Analisis de estacionariedad
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(}\hlstr{"TSA"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"leaps"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"locfit"}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{"tseries"}\hlstd{)}
+\hlkwd{adf.test}\hlstd{(mz)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Augmented Dickey-Fuller Test
+## 
+## data:  mz
+## Dickey-Fuller = -2.4654, Lag order = 4, p-value = 0.386
+## alternative hypothesis: stationary
+\end{verbatim}
+\begin{alltt}
+\hlkwd{BoxCox.ar}\hlstd{(mz)}
+\end{alltt}
 
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in arima0(x, order = c(i, 0L, 0L), include.mean = demean): possible convergence problem: optim gave code = 1}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in arima0(x, order = c(i, 0L, 0L), include.mean = demean): possible convergence problem: optim gave code = 1}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in arima0(x, order = c(i, 0L, 0L), include.mean = demean): possible convergence problem: optim gave code = 1}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+\begin{kframe}\begin{alltt}
+\hlkwd{plot}\hlstd{(mz,}\hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-2} 
+\begin{kframe}\begin{alltt}
+\hlkwd{plot}\hlstd{(}\hlkwd{diff}\hlstd{(mz),}\hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-3} 
+\begin{kframe}\begin{alltt}
+\hlkwd{plot}\hlstd{(}\hlkwd{diff}\hlstd{(mz}\hlopt{^}\hlstd{(}\hlopt{-}\hlnum{1.8}\hlstd{)),}\hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-4} 
+\begin{kframe}\begin{alltt}
+\hlkwd{plot}\hlstd{(}\hlkwd{diff}\hlstd{(mz}\hlopt{^}\hlstd{(}\hlopt{-}\hlnum{2}\hlstd{)),}\hlkwc{type}\hlstd{=}\hlstr{"o"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-5} 
+\begin{kframe}\begin{alltt}
+\hlkwd{adf.test}\hlstd{(}\hlkwd{diff}\hlstd{(mz))}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Augmented Dickey-Fuller Test
+## 
+## data:  diff(mz)
+## Dickey-Fuller = -3.783, Lag order = 4, p-value = 0.02463
+## alternative hypothesis: stationary
+\end{verbatim}
+\begin{alltt}
+\hlkwd{adf.test}\hlstd{(}\hlkwd{diff}\hlstd{(mz}\hlopt{^}\hlstd{(}\hlopt{-}\hlnum{1.8}\hlstd{)))}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Augmented Dickey-Fuller Test
+## 
+## data:  diff(mz^(-1.8))
+## Dickey-Fuller = -3.4573, Lag order = 4, p-value = 0.05394
+## alternative hypothesis: stationary
+\end{verbatim}
+\begin{alltt}
+\hlkwd{adf.test}\hlstd{(}\hlkwd{diff}\hlstd{(mz}\hlopt{^}\hlstd{(}\hlopt{-}\hlnum{2}\hlstd{)))}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Augmented Dickey-Fuller Test
+## 
+## data:  diff(mz^(-2))
+## Dickey-Fuller = -3.4341, Lag order = 4, p-value = 0.05765
+## alternative hypothesis: stationary
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 De los resultados anterires se concluye que solomente se hara una diferencia a las serie
 
 \begin{knitrout}
@@ -182,12 +264,12 @@ De los resultados anterires se concluye que solomente se hara una diferencia a l
 \hlkwd{acf}\hlstd{(}\hlkwd{diff}\hlstd{(mz))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{pacf}\hlstd{(}\hlkwd{diff}\hlstd{(mz))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-2} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{eacf}\hlstd{(}\hlkwd{diff}\hlstd{(mz))}
 \end{alltt}
@@ -209,7 +291,7 @@ De los resultados anterires se concluye que solomente se hara una diferencia a l
 \hlkwd{plot}\hlstd{(cua)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-3} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-3} 
 
 \end{knitrout}
 
@@ -270,22 +352,22 @@ Validacion del modelo
        \hlkwc{type}\hlstd{=}\hlstr{'o'}\hlstd{);} \hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{0}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qqnorm}\hlstd{(}\hlkwd{residuals}\hlstd{(m1.maiz));} \hlkwd{qqline}\hlstd{(}\hlkwd{residuals}\hlstd{(m1.maiz))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-2} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{acf}\hlstd{(}\hlkwd{residuals}\hlstd{(m1.maiz))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-3} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-3} 
 \begin{kframe}\begin{alltt}
 \hlkwd{tsdiag}\hlstd{(m1.maiz,}\hlkwc{gof}\hlstd{=}\hlnum{15}\hlstd{,}\hlkwc{omit.initial}\hlstd{=F)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-4} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-4} 
 
 \end{knitrout}
 
